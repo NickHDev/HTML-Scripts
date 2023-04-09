@@ -1,184 +1,222 @@
-/* create me some buttons that look like apple buttons */
-.button {
-    background: #eaeaea;
-    border: 1px solid #c6c6c6;
-    border-radius: 4px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12);
-    color: #333;
-    display: inline-block;
-    font-size: 14px;
-    font-weight: bold;
-    line-height: 1.4em;
+.body {
+    background: #1d1d1f;
+}
+.navbarBackground{
+    background: url("./logo.png") no-repeat center;
+    background-size: 25%;
+}
+.error {color: #FF0000;}
+
+/* The navbar container */
+.navbar {
     margin-bottom: 0;
-    padding: 20px 20px;
-    text-align: center;
-    vertical-align: middle;
-    white-space: nowrap;
+    border-radius: 0;
+}
+/* Glowing box */
+.shadowbox {
+    z-index: -1;
+    border-radius: 2px;
+    content: '';
+    position: absolute;
+    top: -50px;
+    width: 100%;
+    height: 75px;
+    background: linear-gradient(-45deg,#fffa00,#ff8b27,#ff007a,#832bb5,blue,#832bb5,#ff007a,#ff8b27,#fffa00);
+    background-size: 400% 400%;
+    animation: animateSeeSawColor 15s ease infinite;
+    filter: blur(55px);
+    transform: translate3d(0,0,0);
+}
+/* Spider Images */
+.spiderCarousel {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 8px;
+    width: 50%;
+    height: 25px;
+}
+button {
+    align-items: center;
+    padding: 6px 14px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    font-family: -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
+}
+.button1 {
+    align-items: center;
+    padding: 6px 14px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
+    border-radius: 10px;
+    border: none;
+    outline: none;
     cursor: pointer;
-}
-.button:hover {
-    background: #e1e1e1;
-    border-color: #adadad;
-    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
-    color: #333;
-    text-decoration: none;
-}
-.button:active {
-    background: #d9d9d9;
-    border-color: #999;
-    box-shadow: inset 0 1px 1px rgba(0,0,0,0.15);
-    color: #333;
-    outline: 0;
-}
-.button:focus {
-    outline: thin dotted;
-    outline: 5px auto -webkit-focus-ring-color;
-    outline-offset: -2px;
-}
-.button:active:focus {
-    outline-color: #999;
-}
-.button.disabled,
-.button[disabled] {
-    cursor: default;
-    opacity: 0.65;
-    filter: alpha(opacity=65);
-    box-shadow: none;
-}
-.button::-moz-focus-inner {
-    border: 0;
-    padding: 0;
-}
-.button.btn-primary {
-    background: #0074d9;
-    border-color: #0074d9;
-    color: #fff;
-}
-.button.btn-primary:hover {
-    background: #0067b3;
-    border-color: #0067b3;
-    color: #fff;
-}
-.button.btn-primary:active {
-    background: #005299;
-    border-color: #005299;
-    color: #fff;
-}
-.button.btn-primary:focus {
-    outline-color: #005299;
-}
-.button.btn-success {
-    background: #2ecc40;
-    border-color: #2ecc40;
-    color: #fff;
-}
-.button.btn-success:hover {
-    background: #27ae60;
-    border-color: #27ae60;
-    color: #fff;
-}
-.button.btn-success:active {
-    background: #1f8b4c;
-    border-color: #1f8b4c;
-    color: #fff;
-}
-.button.btn-success:focus {
-    outline-color: #1f8b4c;
-}
-.button.btn-info {
-    background: #7fdbff;
-    border-color: #7fdbff;
-    color: #fff;
-}
-.button.btn-info:hover {
-    background: #7fdbff;
-    border-color: #7fdbff;
-    color: #fff;
-}
-.button.btn-info:active {
-    background: #7fdbff;
-    border-color: #7fdbff;
-    color: #fff;
-}
-.button.btn-info:focus {
-    outline-color: #7fdbff;
-}
-.button.btn-warning {
-    background: #ffdc00;
-    border-color: #ffdc00;
-    color: #fff;
-}
-.button.btn-warning:hover {
-    background: #ffdc00;
-    border-color: #ffdc00;
-    color: #fff;
-}
-/* create me a modal */
-.modal {
-    background: #fff;
-    border: 1px solid #eaeaea;
-    border-radius: 4px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12);
-    display: none;
-    left: 50%;
-    margin-left: -200px;
-    margin-top: -100px;
-    padding: 20px;
-    position: fixed;
-    top: 50%;
-    width: 400px;
-    z-index: 1000;
-}
-.modal-content {
     position: relative;
-    margin: auto;
-    border: #005299;
-    width: auto;
+    z-index: 0;
+    background: rgb(35,35,37,0.5);
 }
-.modal .modal-header {
-    border-bottom: 1px solid #eaeaea;
-    margin-bottom: 20px;
-    padding-bottom: 20px;
+.button1:before {
+    content: '';
+    z-index: -1;
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background: linear-gradient(-45deg,#fffa00,#ff8b27,#ff007a,#832bb5,blue,#832bb5,#ff007a,#ff8b27,#fffa00);
+    background-size: 400%;
+    filter: blur(5px);
+    -webkit-filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: animateColor 45s ease infinite;
+    border-radius: 10px;
 }
-.modal .modal-header h3 {
-    font-size: 18px;
-    font-weight: bold;
-    margin: 0;
+.button1:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #222;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
 }
-.modal .modal-body {
-    margin-bottom: 20px;
+label {
+  color: Black;
+  width: 100%;
 }
-.modal .modal-footer {
-    border-top: 1px solid #eaeaea;
-    margin-top: 20px;
-    padding-top: 20px;
+select {
+  width: 50%;
 }
-.modal .modal-footer .button {
-    margin-right: 10px;
+form {
+    height:500px;
+    overflow-y:auto;
+}
+.block1{
+    background: no-repeat left;
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    padding: 5px 10px;
+    margin: 8px 5px;
+    z-index: -1;
+}
+.block2{
+    background: no-repeat right;
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    padding: 5px 10px;
+    margin: 8px 5px;
+    z-index: -1;
+}
+.text-block{
+    color: white;
+    background-color: rgb(35,35,50,0.6);
+    font-family: -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
+    border-radius: 5px;
+    padding: 12px 20px;
+}
+.text-block2{
+    color: white;
+    background-color: rgb(35,35,50,0.6);
+    font-family: -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
+    padding: 12px 20px;
+    border-radius: 20px;
+}
+input[type=text] {
+  width: 50%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 3px solid #ccc;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+input[type=password] {
+   width: 50%;
+   padding: 12px 20px;
+   margin: 8px 0;
+   box-sizing: border-box;
+   border: 3px solid #ccc;
+   -webkit-transition: 0.5s;
+   transition: 0.5s;
+}
+input[type=text]:focus {
+  border: 3px solid #555;
+}
+footer {
+      background-color: #555;
+      color: white;
+      padding: 15px;
+}
+.modal {
+  display: none;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  overflow: auto;
+  background-color: rgba(20,20,30,0.6);
+  padding-top: 25px;
+}
+/* Modal Content/Box */
+.modal-content {
+  background: rgb(29,29,37,0.4);
+  margin: 5px auto 15% auto;
+  border: 1px solid #888;
+  width: 80%;
+}
+/* The Close Button */
+.close {
+  position: absolute;
+  right: 135px;
+  top: 10px;
+  color: red;
+  font-size: 100px;
+}
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
 }
 .animate {
-    -webkit-animation-duration: 0.3s;
-    animation-duration: 0.3s;
-    -webkit-animation-fill-mode: both;
-    animation-fill-mode: both;
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
 }
-.fadeIn {
-    -webkit-animation-name: fadeIn;
-    animation-name: fadeIn;
+@-webkit-keyframes animatezoom {
+  from {-webkit-transform: scale(0)}
+  to {-webkit-transform: scale(1)}
 }
-@-webkit-keyframes fadeIn {
-    0% {
-        opacity: 0;
+@keyframes animatezoom {
+  from {transform: scale(0)}
+  to {transform: scale(1)}
+}
+@keyframes animateColor {
+	0% {
+		background-position: 0% 0%;
+	}
+	50% {
+		background-position: 400% 0%;
+	}
+	100% {
+		background-position: 0% 0%;
+	}
+}
+@keyframes animateSeeSawColor {
+    0%{
+        background-position: 0% 50%;
+        transform: rotate(-3deg);
+    }
+    50% {
+        background-position: 100% 50%;
+    	transform: rotate(3deg);
     }
     100% {
-        opacity: 1;
-    }
-}
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
+        background-position: 0% 50%;
+    	transform: rotate(-3deg);
     }
 }
