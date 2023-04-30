@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<?php
+    include 'connectionInfo.php';
+?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -93,7 +96,7 @@
             <button type="button" data-dismiss="modal">&times;</button>
         </span>
     <!-- Modal Content -->
-    <form id="myForm" class="modal-content animate" name="myForm" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" novalidate>
+    <form id="myForm" class="modal-content animate" name="myForm" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
         <div class="container-fluid">
 
             <h1>Sign Up</h1>
@@ -102,45 +105,45 @@
             <p><span class="error">* required field</span></p>
 
             <label for="name"><b>Username</b></label>
-            <input type="text" value="<?php echo $name; ?>" placeholder="Enter Username" name="name">
+            <input required type="text" maxlength="50" minlength="6" value="<?php echo $name; ?>" placeholder="Enter Username" name="name">
             <span class="error">* <?php echo $nameErr; ?></span>
             <br><br>
 
             <label><b>Password</b></label>
-            <input type="password" value="<?php echo $password;?>" placeholder="Enter Password" name="password">
+            <input required type="password" maxlength="50" minlength="8" value="<?php echo $password;?>" placeholder="Enter Password" name="password">
             <span class="error">* <?php echo $passwordErr; ?></span>
             <br><br>
 
             <label><b>Repeat Password</b></label>
-            <input type="password" value="<?php echo $repeat_password;?>" placeholder="Repeat Password" name="repeat_password">
+            <input required type="password" maxlength="50" minlength="8" value="<?php echo $repeat_password;?>" placeholder="Repeat Password" name="repeat_password">
             <span class="error">* <?php echo $passwordErr; ?></span>
             <br><br>
 
             <label><b>First Name</b></label>
-            <input type="text" value="<?php echo $firstname;?>" placeholder="Enter Name" name="firstname">
+            <input required type="text" maxlength="50" value="<?php echo $firstname;?>" placeholder="Enter Name" name="firstname">
             <span class="error">* <?php echo $firstnameErr; ?></span>
             <br><br>
 
             <label><b>Last Name</b></label>
-            <input type="text" value="<?php echo $lastname;?>" placeholder="Enter Last Name" name="lastname">
+            <input required type="text" maxlength="50" value="<?php echo $lastname;?>" placeholder="Enter Last Name" name="lastname">
             <span class="error">* <?php echo $lastnameErr; ?></span>
             <br><br>
 
             <label><b>Address Line 1</b></label>
-            <input type="text" value="<?php echo $address;?>" placeholder="Enter Address 1" name="address">
+            <input required type="text" maxlength="100" value="<?php echo $address;?>" placeholder="Enter Address 1" name="address">
             <span class="error">* <?php echo $addressErr; ?></span>
             <br><br>
 
             <label><b>Address Line 2</b></label>
-            <input type="text" maxlength="100" placeholder="Enter Address 2">
+            <input type="text" maxlength="100" maxlength="100" placeholder="Enter Address 2">
 
             <label><b>City</b></label>
-            <input type="text" value="<?php echo $city;?>" placeholder="Enter City" name="city" id="city" >
+            <input required type="text" maxlength="50" value="<?php echo $city;?>" placeholder="Enter City" name="city" id="city" >
             <span class="error">* <?php echo $cityErr; ?></span>
             <br><br>
 
             <label><b>State</b></label>
-            <select id="State" value="<?php echo $state;?>" name="state" >
+            <select required id="State" value="<?php echo $state;?>" name="state" >
                 <option value="AL">AL</option>
                 <option value="AK">AK</option>
                 <option value="AZ">AZ</option>
@@ -196,17 +199,17 @@
             <br><br>
 
             <label><b>Zip Code</b></label>
-            <input type="text" value="<?php echo $zip;?>" placeholder="Enter Zip" name="zip" id="zip">
+            <input required type="text" maxlength="10" minlength="5" value="<?php echo $zip;?>" placeholder="Enter Zip" name="zip" id="zip">
             <span class="error">* <?php echo $zipErr; ?></span>
             <br><br>
 
             <label><b>Phone Number</b></label>
-            <input type="text" value="<?php echo $phone;?>" placeholder="Enter Number" name="phone" id="phone" >
+            <input required type="text" maxlength="14" value="<?php echo $phone;?>" placeholder="Enter Number" name="phone" id="phone" >
             <span class="error">* <?php echo $phoneErr; ?></span>
             <br><br>
 
             <label><b>Email</b></label>
-            <input type="text" value="<?php echo $email;?>" placeholder="Enter Email" name="email" id="email" >
+            <input required type="text" value="<?php echo $email;?>" placeholder="Enter Email" name="email" id="email" >
             <span class="error">* <?php echo $emailErr; ?></span>
             <br><br>
 
@@ -231,7 +234,7 @@
             <br><br>
 
             <label><b>Date Of Birth</b></label>
-            <input type="date" placeholder="1/1/1995" value="<?php echo $dob;?>" name="dob" id="date">
+            <input required type="date" placeholder="1/1/1995" value="<?php echo $dob;?>" name="dob" id="date">
             <span class="error">* <?php echo $dobErr; ?></span>
             <br><br>
 
@@ -239,33 +242,16 @@
                 <button type="button">
                     <input type="reset">
                 </button>
-                <button type="submit" name="submit" value="Submit" class="signup">Sign Up</button>
+                <button type="submit"  name="submit" value="Submit" class="signup">Sign Up</button>
                 <button type="button" onclick="document.getElementById('id02').style.display='none'"
                         class="cancelbtn">
                     Cancel
                 </button>
-
-
             </div>
         </div>
     </form>
     <?php
-        if ($isValid){
-            ?>
-            <form id="hiddenForm" name="hiddenForm" action="confirmation.php" method="post">
-                <?php
-                foreach ($_POST as $key => $value){
-                    ?>
-                    <input type="hidden" name="<?php echo $key; ?>" value="<?php echo $value; ?>">
-                    <?php
-                }
-                ?>
-            </form>
-            <script>
-                document.createElement('form').submit.call(document.getElementById('hiddenForm'));
-            </script>
-            <?php
-        }
+    include 'insertValidData.php';
     ?>
 </div>
 <!-- Spider Content-->

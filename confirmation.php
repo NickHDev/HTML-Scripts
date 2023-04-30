@@ -1,14 +1,58 @@
 <!DOCTYPE html>
+<?php
+ include 'connectionInfo.php';
+?>
 <html>
 <head>
-    <title>Confirmation</title>
+    <?php define ("title","Confirmation");?>
+    <title><?php echo title;?></title>
+    <meta charset="UTF-8">
 </head>
-<body>
-    <h1>Confirmation</h1>
+<body class="body">
+    <h1><?php echo title;?></h1>
     <?php
-    foreach($_POST as $key => $value){
-        echo $key . " = " . $value . "<br>";
-    }
+        include "selectUserData.php";
     ?>
+    <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+    <label for="name">Name:</label>
+    <input type="text" name="name" id="name" value="<?php echo $name;?>" readonly>
+    <span class="error">* <?php echo $nameErr;?></span>
+    <br><br>
+    <label for="password">Password:</label>
+    <input type="password" name="password" id="password" value="<?php echo $password;?>" readonly>
+    <span class="error">* <?php echo $passwordErr;?></span>
+    <br><br>
+    <label for="email">Email:</label>
+    <input type="text" name="email" id="email" value="<?php echo $email;?>" readonly>
+    <span class="error">* <?php echo $emailErr;?></span>
+    <br><br>
+    <label for="firstname">First Name:</label>
+    <input type="text" name="firstname" id="firstname" value="<?php echo $firstname;?>" readonly>
+    <span class="error">* <?php echo $firstnameErr;?></span>
+    <br><br>
+    <label for="lastname">Last Name:</label>
+    <input type="text" name="lastname" id="lastname" value="<?php echo $lastname;?>" readonly>
+    <span class="error">* <?php echo $lastnameErr;?></span>
+    <br><br>
+    <label for="address">Address:</label>
+    <input type="text" name="address" id="address" value="<?php echo $address;?>" readonly>
+    <span class="error">* <?php echo $addressErr;?></span>
+    <br><br>
+    <label for="city">City:</label>
+    <input type="text" name="city" id="city" value="<?php echo $city;?>" readonly>
+    <span class="error">* <?php echo $cityErr;?></span>
+    <br><br>
+    <label for="state">State:</label>
+    <input type="text" name="state" id="state" value="<?php echo $state;?>" readonly>
+    <span class="error">* <?php echo $stateErr;?></span>
+    <br><br>
+    <label for="zip">Zip Code:</label>
+    <input type="text" name="zip" id="zip" value="<?php echo $zip;?>" readonly>
+    <span class="error">* <?php echo $zipErr;?></span>
+    <br><br>
+    <label for="phone">Phone Number:</label>
+    <input type="text" name="phone" id="phone" value="<?php echo $phone;?>" readonly>
+    <span class="error">* <?php echo $phoneErr;?></span>
+    </form>
 </body>
 </html>
