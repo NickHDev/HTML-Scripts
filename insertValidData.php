@@ -8,13 +8,13 @@ if($isValid){
         // Prepare the SQL statement
         $sql = $conn->prepare("INSERT INTO registration (userName, password, firstName, lastName, address1, 
         city, state, zipCode, phone, email, gender, maritalStatus, dateOfBirth)
-        VALUES (:name, :password, :firstname, :lastname, :address,'', '', '', '', '', '', '', CURRENT_DATE())");
+        VALUES (:name, :password, :firstname, :lastname,'','', '', '', '', '', '', '', CURRENT_DATE())");
         // Bind parameters to the SQL statement
-        $sql->bindParam(':userName', $name);
+        $sql->bindParam(':name', $name);
         $sql->bindParam(':password', $password);
-        $sql->bindParam(':firstName', $firstname);
-        $sql->bindParam(':lastName', $lastname);
-        $sql->bindParam(':address1', $address);
+        $sql->bindParam(':firstname', $firstname);
+        $sql->bindParam(':lastname', $lastname);
+        $sql->bindParam(':address', $address);
         $sql->bindParam(':city', $city);
         $sql->bindParam(':state', $state);
         $sql->bindParam(':zipCode', $zip);

@@ -7,13 +7,20 @@
     <?php define ("title","Confirmation");?>
     <title><?php echo title;?></title>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>My First Webpage</title>
+    <link href="./colors.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="./myScript.js"></script>
 </head>
 <body class="body">
     <h1><?php echo title;?></h1>
     <?php
         include "selectUserData.php";
     ?>
-    <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
     <label for="name">Name:</label>
     <input type="text" name="name" id="name" value="<?php echo $name;?>" readonly>
     <span class="error">* <?php echo $nameErr;?></span>

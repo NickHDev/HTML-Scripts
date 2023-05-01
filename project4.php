@@ -105,12 +105,12 @@
             <p><span class="error">* required field</span></p>
 
             <label for="name"><b>Username</b></label>
-            <input required type="text" maxlength="50" minlength="6" value="<?php echo $name; ?>" placeholder="Enter Username" name="name">
+            <input id="name" required type="text" maxlength="50" minlength="6" value="<?php echo $name; ?>" placeholder="Enter Username" name="name">
             <span class="error">* <?php echo $nameErr; ?></span>
             <br><br>
 
             <label><b>Password</b></label>
-            <input required type="password" maxlength="50" minlength="8" value="<?php echo $password;?>" placeholder="Enter Password" name="password">
+            <input id="password" required type="password" maxlength="50" minlength="8" value="<?php echo $password;?>" placeholder="Enter Password" name="password">
             <span class="error">* <?php echo $passwordErr; ?></span>
             <br><br>
 
@@ -120,17 +120,17 @@
             <br><br>
 
             <label><b>First Name</b></label>
-            <input required type="text" maxlength="50" value="<?php echo $firstname;?>" placeholder="Enter Name" name="firstname">
+            <input id="firstname" required type="text" maxlength="50" value="<?php echo $firstname;?>" placeholder="Enter Name" name="firstname">
             <span class="error">* <?php echo $firstnameErr; ?></span>
             <br><br>
 
             <label><b>Last Name</b></label>
-            <input required type="text" maxlength="50" value="<?php echo $lastname;?>" placeholder="Enter Last Name" name="lastname">
+            <input id="lastname" required type="text" maxlength="50" value="<?php echo $lastname;?>" placeholder="Enter Last Name" name="lastname">
             <span class="error">* <?php echo $lastnameErr; ?></span>
             <br><br>
 
             <label><b>Address Line 1</b></label>
-            <input required type="text" maxlength="100" value="<?php echo $address;?>" placeholder="Enter Address 1" name="address">
+            <input id="address" required type="text" maxlength="100" value="<?php echo $address;?>" placeholder="Enter Address 1" name="address">
             <span class="error">* <?php echo $addressErr; ?></span>
             <br><br>
 
@@ -143,7 +143,7 @@
             <br><br>
 
             <label><b>State</b></label>
-            <select required id="State" value="<?php echo $state;?>" name="state" >
+            <select required id="state" value="<?php echo $state;?>" name="state" >
                 <option value="AL">AL</option>
                 <option value="AK">AK</option>
                 <option value="AZ">AZ</option>
