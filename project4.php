@@ -135,7 +135,7 @@
             <br><br>
 
             <label><b>Address Line 2</b></label>
-            <input type="text" maxlength="100" maxlength="100" placeholder="Enter Address 2">
+            <input type="text" maxlength="100" maxlength="100" value="<?php echo $address2;?>" placeholder="Enter Address 2">
 
             <label><b>City</b></label>
             <input required type="text" maxlength="50" value="<?php echo $city;?>" placeholder="Enter City" name="city" id="city" >
@@ -243,8 +243,7 @@
                     <input type="reset">
                 </button>
                 <button type="submit"  name="submit" value="Submit" class="signup">Sign Up</button>
-                <button type="button" onclick="document.getElementById('id02').style.display='none'"
-                        class="cancelbtn">
+                <button type="button" class="cancelbtn">
                     Cancel
                 </button>
             </div>
@@ -253,7 +252,7 @@
     <?php
     include 'insertValidData.php';
     ?>
-</div>
+    </div>
 <!-- Spider Content-->
 <div class="container">
 <div class="media">

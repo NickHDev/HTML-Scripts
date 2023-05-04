@@ -4,6 +4,6 @@ if (session_status() == PHP_SESSION_NONE) {
 }
 $servername = "localhost";
 $username = "root";
-$password = "";
+$dbpassword = "";
 $dbname = "project";
 ?>

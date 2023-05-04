@@ -1,9 +1,9 @@
 <?php
-// This is the select user data script
+ob_start();
 try{
     $last_id = $_SESSION["last_id"];
     // Create connection
-    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $dbpassword);
     // Set the PDO error mode to exception
     $conn->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
     // Prepare the SQL statement
@@ -30,12 +30,7 @@ try{
     $email = $assoc_array["email"];
     $gender = $assoc_array["gender"];
     $maritalStatus = $assoc_array["maritalStatus"];
-    $dateOfBirth = $assoc_array["dateOfBirth"];
-
-    // Echo successful message
-    echo "New record created successfully";
-    // Redirect to confirmation page
-    header("Location: confirmation.php");
+    $dob = $assoc_array["dateOfBirth"];
 }
 catch(PDOException $e){
     echo "connection failed" . $e->getMessage();
@@ -44,4 +39,5 @@ finally{
     // Close connection
     $conn = null;
 }
+ob_end_flush();
 ?>

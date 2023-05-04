@@ -1,11 +1,6 @@
 <!DOCTYPE html>
-<?php
- include 'connectionInfo.php';
-?>
 <html>
 <head>
-    <?php define ("title","Confirmation");?>
-    <title><?php echo title;?></title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>My First Webpage</title>
@@ -16,10 +11,6 @@
     <script src="./myScript.js"></script>
 </head>
 <body class="body">
-    <h1><?php echo title;?></h1>
-    <?php
-        include "selectUserData.php";
-    ?>
     <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
     <label for="name">Name:</label>
     <input type="text" name="name" id="name" value="<?php echo $name;?>" readonly>

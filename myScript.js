@@ -15,7 +15,7 @@ $(document).ready(function() {
     var maritalStatus = $('#marriage').val().trim();
     var zip = $('#zip').val().trim();
     var dateOfBirth = $('#date').val().trim();
-    var valid = true;
+    
     if (name == '' && name.length < 6 || name.length > 50) {
       $('#name').addClass('error');
       valid = false;

@@ -1,19 +1,19 @@
-<?php 
-// This is the input validation script
-// error values
+<?php
 $nameErr = $passwordErr = $emailErr = $firstnameErr = $lastnameErr =
 $addressErr = $cityErr = $stateErr = $zipErr = $phoneErr = $marriageErr =
 $dobErr = $genderErr = "";
 // input values
 $name = $password = $repeat_password = $email = $firstname = $lastname = 
-$address = $city = $state = $zip = $phone = $marriage = $dob = $gender = "";
-$isValid = false;
+$address = $address2 = $city = $state = $zip = $phone = $marriage = $dob = $gender = "";
+
+$isValid = true;
 
 if($_SERVER["REQUEST_METHOD"] == "POST"){
-    $isValid = true;
+    //print_r($_POST);
     $repeat_password=$_POST["repeat_password"];
     if(empty($_POST["name"])){
         $nameErr = "Name is required";
+        printf("name is empty");
         $isValid = false;
     }else{
         $name = test_input($_POST["name"]);
@@ -173,7 +173,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $gender = test_input($_POST["gender"]);
     }
 }
-
 //function for testing input values
 function test_input($data) {
   $data = trim($data);
@@ -181,5 +180,4 @@ function test_input($data) {
   $data = htmlspecialchars($data);
   return $data;
 }
-
 ?>
